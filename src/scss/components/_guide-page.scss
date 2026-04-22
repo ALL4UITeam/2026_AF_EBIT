@@ -1,0 +1,106 @@
+// 가이드 페이지 레이아웃·팔레트 카드·뱃지
+.al-guide-page {
+    &__header {
+        margin-bottom: 18px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 32px;
+        color: var(--al-color-text);
+    }
+
+    &__subtitle {
+        margin: 6px 0 0;
+        color: var(--al-color-text-muted);
+    }
+}
+
+.al-guide-section {
+    background: var(--al-color-surface);
+    border: 1px solid var(--al-color-border);
+    border-radius: var(--al-radius-lg);
+    padding: 20px;
+    margin-bottom: 14px;
+
+    &__title {
+        margin: 0 0 12px;
+        font-size: 18px;
+        color: var(--al-color-text);
+    }
+}
+
+.al-guide-grid {
+    display: grid;
+    gap: 10px;
+
+    &--colors {
+        grid-template-columns: repeat(3, minmax(140px, 1fr));
+    }
+}
+
+.al-guide-palette-card {
+    border-radius: var(--al-radius-md);
+    color: #fff;
+    padding: 18px;
+    font-weight: 700;
+
+    &--primary {
+        background: linear-gradient(90deg, #4f46e5, #312e81);
+    }
+
+    &--secondary {
+        background: linear-gradient(90deg, #a78bfa, #4c1d95);
+    }
+
+    &--gray {
+        background: linear-gradient(90deg, #cbd5e1, #334155);
+    }
+}
+
+.al-guide-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--middle {
+        align-items: center;
+    }
+}
+
+.al-guide-col {
+    display: grid;
+    gap: 10px;
+}
+
+.al-badge {
+    display: inline-block;
+    border-radius: var(--al-radius-pill);
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+
+    &--info {
+        background: var(--al-color-info-bg);
+        color: var(--al-color-info-text);
+    }
+
+    &--warn {
+        background: var(--al-color-warn-bg);
+        color: var(--al-color-warn-text);
+    }
+
+    &--danger {
+        background: var(--al-color-danger-bg);
+        color: var(--al-color-danger-text);
+    }
+}
+
+.al-guide-total {
+    margin: 12px 0 0;
+}

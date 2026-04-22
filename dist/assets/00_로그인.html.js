@@ -1,4 +1,3 @@
-import "./modulepreload-polyfill.js";
 import "./index.js";
 document.addEventListener("DOMContentLoaded", () => {
   const pwInput = document.getElementById("password");

@@ -1,0 +1,48 @@
+.al-tabs {
+    &__list {
+        display: inline-flex;
+        gap: 4px;
+        border: 1px solid var(--al-color-border);
+        border-radius: var(--al-radius-md);
+        padding: 4px;
+        margin: 8px 0;
+        list-style: none;
+    }
+
+    &__tab {
+        border: 0;
+        border-radius: var(--al-radius-sm);
+        background: transparent;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        color: var(--al-color-text);
+
+        &:hover:not(&--active) {
+            background: rgba(79, 70, 229, 0.06);
+        }
+
+        &--active {
+            background: var(--al-color-primary);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--al-color-primary);
+            outline-offset: 2px;
+        }
+    }
+
+    &__panel {
+        display: none;
+        border: 1px solid var(--al-color-border);
+        border-radius: var(--al-radius-md);
+        padding: 12px;
+
+        &--active {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+// ============================================================
+//  AL UI — design tokens (CSS custom properties)
+//  확장: 팔레트/시맨틱 토큰을 이 파일에만 추가하면 컴포넌트에서 var()로 소비
+// ============================================================
+:root {
+    // Brand / semantic
+    --al-color-primary: #4f46e5;
+    --al-color-primary-dark: #3730a3;
+    --al-color-secondary: #8b5cf6;
+    --al-color-text: #1f2a44;
+    --al-color-text-muted: #64748b;
+    --al-color-border: #d8dced;
+    --al-color-surface: #ffffff;
+    --al-color-bg: #f6f8fc;
+    --al-color-surface-soft: #f9fbff;
+    --al-color-surface-tint: #eff3ff;
+    --al-color-tertiary-bg: #eef1ff;
+    --al-color-tertiary-text: #3f46a6;
+
+    // Choice (radio/checkbox)
+    --al-color-choice: #6366f1;
+    --al-color-choice-border: #94a3b8;
+    --al-color-choice-disabled-bg: #f1f5f9;
+
+    // Pagination active (기존 가이드 톤 유지)
+    --al-color-pagination-active-bg: #1e1b4b;
+    --al-color-pagination-active-fg: #ffffff;
+
+    // Danger / success (뱃지·향후 확장)
+    --al-color-danger-bg: #ffe5e5;
+    --al-color-danger-text: #b42020;
+    --al-color-warn-bg: #fff4d9;
+    --al-color-warn-text: #9c6a00;
+    --al-color-info-bg: #ebefff;
+    --al-color-info-text: #3242aa;
+
+    // Radius
+    --al-radius-sm: 8px;
+    --al-radius-md: 10px;
+    --al-radius-lg: 14px;
+    --al-radius-pill: 999px;
+
+    // Shadow / overlay
+    --al-shadow-modal-overlay: rgba(15, 23, 42, 0.45);
+}

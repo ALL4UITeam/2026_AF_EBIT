@@ -19,7 +19,6 @@
     <script src="/2026_AF_EBIT/lib/jQuery-ui/jquery-ui.min.js"></script>
     <script src="/2026_AF_EBIT/lib/simplebar/simplebar.min.js"></script>
     <script src="/2026_AF_EBIT/lib/dragula/dragula.min.js"></script>
-  <script type="module" src="/2026_AF_EBIT/assets/modulepreload-polyfill.js"></script>
   <script type="module" src="/2026_AF_EBIT/assets/index.js"></script>
   <link rel="stylesheet" href="/2026_AF_EBIT/assets/style.css">
 </head>
@@ -27,7 +26,163 @@
 <body>
 
     <div class="app">
+        <header class="al-header">
+            <div class="al-header__left">
+                <button type="button" class="al-header__menu-btn" id="alMenuBtn" aria-label="메뉴 열기">
+                    <span class="al-header__hamburger" aria-hidden="true"><span></span></span>
+                </button>
+                <a href="#" class="al-header__brand">
+                    <img src="/2026_AF_EBIT/assets/images/logo.svg" alt="" />
+                </a>
+            </div>
+        
+            <div class="al-header__right">
+                <button type="button" class="al-header__notify" aria-label="알림">
+                    <span class="al-header__notify-icon" aria-hidden="true"></span>
+                </button>
+                <div class="al-header__user">
+                    <div class="al-header__user-name"><strong>관리자</strong>님</div>
+                    <div class="al-header__avatar" aria-hidden="true">
+                        <span class="al-header__avatar-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
         <div class="app-body">
+            <aside class="al-sidenav" id="alSidenav" aria-label="주 메뉴">
+                <div class="al-sidenav__scroll">
+                    <ul class="al-sidenav__list">
+            
+                        <!-- 대시보드 (단일 메뉴) -->
+                        <li class="al-sidenav__item">
+                            <a href="#" class="al-sidenav__link">
+                                <span class="al-sidenav__icon al-sidenav__icon--m01" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">대시보드</span>
+                            </a>
+                        </li>
+            
+                        <!-- 앱 관리 (2depth, 현재 활성) -->
+                        <li class="al-sidenav__item is-open" data-nav="app">
+                            <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                                <span class="al-sidenav__icon al-sidenav__icon--m02" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">앱관리</span>
+                                <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                            </button>
+                            <ul class="al-sidenav__sub">
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink is-active">앱 관리</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">배포 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+            
+                        <!-- 단말 관리 -->
+                        <li class="al-sidenav__item">
+                            <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                                <span class="al-sidenav__icon al-sidenav__icon--m03" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">단말관리</span>
+                                <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                            </button>
+                            <ul class="al-sidenav__sub">
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">운영 대시보드</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">단말 등록</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">단말 등록</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">그룹 관리</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">단말 상태 현황</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">원격 제어</a>
+                                </li>
+                            </ul>
+                        </li>
+            
+                        <!-- 컨텐츠 관리 -->
+                        <li class="al-sidenav__item">
+                            <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                                <span class="al-sidenav__icon al-sidenav__icon--m04" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">컨텐츠관리</span>
+                                <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                            </button>
+                            <ul class="al-sidenav__sub">
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">텍스트 설정</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">텍스트 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+            
+                        <!-- 장비분석 -->
+                        <li class="al-sidenav__item">
+                            <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                                <span class="al-sidenav__icon al-sidenav__icon--m05" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">장비분석</span>
+                                <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                            </button>
+                            <ul class="al-sidenav__sub">
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">분석 현황</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">교체주기 분석</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">기기 유형 관리</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">배터리 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+            
+                        <!-- 운영관리 -->
+                        <li class="al-sidenav__item">
+                            <a href="#" class="al-sidenav__link">
+                                <span class="al-sidenav__icon al-sidenav__icon--m06" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">운영관리</span>
+                            </a>
+                        </li>
+            
+                        <!-- 시스템관리 -->
+                        <li class="al-sidenav__item">
+                            <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                                <span class="al-sidenav__icon al-sidenav__icon--m07" aria-hidden="true"></span>
+                                <span class="al-sidenav__label">시스템관리</span>
+                                <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                            </button>
+                            <ul class="al-sidenav__sub">
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">사용자 관리</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">그룹 관리</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">권한 관리</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">작업 이력</a>
+                                </li>
+                                <li class="al-sidenav__subitem">
+                                    <a href="#" class="al-sidenav__sublink">공통 코드 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </div>
 

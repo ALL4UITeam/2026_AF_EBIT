@@ -1,0 +1,140 @@
+<main class="al-content al-app-manage-mock" id="alContent">
+
+    <!-- Page Header (배너) -->
+    <section class="al-page-header" aria-labelledby="alPageTitle">
+        <div class="al-page-header__inner">
+            <div class="al-page-header__meta">
+                <ol class="al-page-header__breadcrumb">
+                    <li><a href="#">홈</a></li>
+                    <li><span>앱 관리</span></li>
+                    <li><span>앱 관리</span></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Body -->
+    <section class="al-page-body" aria-label="본문">
+
+        <!-- Top summary -->
+        <section class="al-app-manage-mock__summary" aria-label="요약">
+            <article class="al-app-manage-mock__card al-app-manage-mock__card--chart">
+                <h2 class="al-app-manage-mock__card-title">차트로 보는 현황</h2>
+                <div class="al-app-manage-mock__chart">
+                    <!-- 아이콘 리소스 없으면 생략: 시안은 원형 차트 -->
+                    <div class="al-app-manage-mock__donut" aria-hidden="true"></div>
+                    <ul class="al-app-manage-mock__legend" aria-label="범례">
+                        <li><span class="al-app-manage-mock__dot al-app-manage-mock__dot--c1" aria-hidden="true"></span>legend 01</li>
+                        <li><span class="al-app-manage-mock__dot al-app-manage-mock__dot--c2" aria-hidden="true"></span>legend 02</li>
+                        <li><span class="al-app-manage-mock__dot al-app-manage-mock__dot--c3" aria-hidden="true"></span>legend 03</li>
+                        <li><span class="al-app-manage-mock__dot al-app-manage-mock__dot--c4" aria-hidden="true"></span>legend 04</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="al-app-manage-mock__card al-app-manage-mock__card--stats" aria-label="전체 요약">
+                <div class="al-app-manage-mock__stats-head">
+                    <h2 class="al-app-manage-mock__card-title">전체</h2>
+                    <p class="al-app-manage-mock__stats-meta">최근 업데이트: 2026-03-31 09:35 기준</p>
+                    <div class="al-app-manage-mock__stats-total">
+                        <span class="al-app-manage-mock__stats-total-num">2</span>
+                        <span class="al-app-manage-mock__stats-total-unit">건</span>
+                    </div>
+                </div>
+                <div class="al-app-manage-mock__stats-grid" role="list">
+                    <div class="al-app-manage-mock__stats-item" role="listitem">
+                        <div class="al-app-manage-mock__stats-label">AGENT</div>
+                        <div class="al-app-manage-mock__stats-value"><strong>1</strong><span>건</span></div>
+                    </div>
+                    <div class="al-app-manage-mock__stats-item" role="listitem">
+                        <div class="al-app-manage-mock__stats-label">UPDATE</div>
+                        <div class="al-app-manage-mock__stats-value"><strong>1</strong><span>건</span></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Table card -->
+        <section class="al-app-manage-mock__panel" aria-label="목록">
+            <div class="al-app-manage-mock__panel-head">
+                <div class="al-app-manage-mock__total">총 <strong>5</strong>건</div>
+                <div class="al-app-manage-mock__filters" aria-label="필터">
+                    <label class="al-field al-app-manage-mock__filter">
+                        <input class="al-field__control" type="text" value="2026-03-31 ~ 2026-04-07" aria-label="기간" />
+                    </label>
+                    <label class="al-field al-app-manage-mock__filter">
+                        <select class="al-field__control" aria-label="타입(전체)">
+                            <option>타입(전체)</option>
+                            <option>AGENT</option>
+                            <option>UPDATE</option>
+                        </select>
+                    </label>
+                    <label class="al-field al-app-manage-mock__filter">
+                        <select class="al-field__control" aria-label="상태">
+                            <option>전체</option>
+                            <option>정상</option>
+                            <option>오류</option>
+                        </select>
+                    </label>
+                    <label class="al-field al-field--search al-app-manage-mock__search">
+                        <input class="al-field__control" type="search" placeholder="입력해 주세요." aria-label="검색어" />
+                        <button type="button" class="al-field__search-btn" aria-label="검색">검색</button>
+                    </label>
+                </div>
+            </div>
+
+            <div class="al-app-manage-mock__panel-body">
+                <div class="form-tbl form-tbl--app" style="--column-count: 8;">
+                    <div class="table-header">
+                        <div class="table-cell__row">
+                            <div class="table-cell">NO</div>
+                            <div class="table-cell">타입</div>
+                            <div class="table-cell">버전</div>
+                            <div class="table-cell">업데이트 내용</div>
+                            <div class="table-cell">패키지명</div>
+                            <div class="table-cell">다운로드 URL</div>
+                            <div class="table-cell">등록일자</div>
+                            <div class="table-cell">등록자</div>
+                        </div>
+                    </div>
+                    <div class="table-body">
+                        <div class="table-cell__row">
+                            <div class="table-cell">1</div>
+                            <div class="table-cell"><strong>AGENT</strong></div>
+                            <div class="table-cell">0.0.1</div>
+                            <div class="table-cell">버전 업데이트</div>
+                            <div class="table-cell">com.example.agent</div>
+                            <div class="table-cell"><a class="form-tbl__link" href="#">/download/agent.apk</a></div>
+                            <div class="table-cell">2026-04-05</div>
+                            <div class="table-cell">admin</div>
+                        </div>
+                        <div class="table-cell__row">
+                            <div class="table-cell">2</div>
+                            <div class="table-cell"><strong>UPDATE</strong></div>
+                            <div class="table-cell">0.0.3</div>
+                            <div class="table-cell">버전 업데이트</div>
+                            <div class="table-cell">com.example.update</div>
+                            <div class="table-cell"><a class="form-tbl__link" href="#">/download/update.apk</a></div>
+                            <div class="table-cell">2026-04-08</div>
+                            <div class="table-cell">admin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="al-app-manage-mock__panel-foot">
+                    <nav class="al-pagination" data-al-pagination aria-label="페이지 네비게이션">
+                        <button type="button" class="al-pagination__nav" data-al-page-first aria-label="첫 페이지">처음</button>
+                        <button type="button" class="al-pagination__nav" data-al-page-prev aria-label="이전 페이지">이전</button>
+                        <div class="al-pagination__pages" data-al-pagination-pages></div>
+                        <button type="button" class="al-pagination__nav" data-al-page-next aria-label="다음 페이지">다음</button>
+                        <button type="button" class="al-pagination__nav" data-al-page-last aria-label="마지막 페이지">마지막</button>
+                    </nav>
+                    <button type="button" class="al-btn al-btn--primary al-btn--md">등록</button>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+</main>
+
