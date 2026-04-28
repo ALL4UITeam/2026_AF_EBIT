@@ -1,0 +1,51 @@
+.board {
+    padding: 32px;
+    border: 1px solid #edf1f6;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+    &__head {
+        padding: 0;
+        margin-bottom: 20px;
+        border-bottom: 0;
+        background: #fff;
+    }
+
+    &__body {
+        padding: 0;
+        min-width: 0;
+    }
+
+    .table-wrapper {
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    &__table {
+        th,
+        td {
+            font-size: 14px;
+        }
+    }
+
+    &__foot {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 28px;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+}
