@@ -8,13 +8,14 @@
 @use 'components/layout';
 @use 'components/button';
 @use 'components/card';
+@use 'components/board';
 @use 'components/form';
 @use 'components/login';
 @use 'components/table';
 @use 'components/icon';
 @use 'components/accordion';
 @use 'components/badge';
-@use 'components/app-manage';
+@use 'components/status-overview';
 @use 'components/app-dashboard';
 @use 'components/tree';
 @use 'components/menu-permission-tree';

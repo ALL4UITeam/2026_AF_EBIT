@@ -1,4 +1,31 @@
 
+@font-face {
+    font-family: 'Pretendard GOV';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/assets/fonts/PretendardGOV-Regular.subset.woff2') format('woff2'),
+        url('/assets/fonts/PretendardGOV-Regular.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard GOV';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/assets/fonts/PretendardGOV-Medium.subset.woff2') format('woff2'),
+        url('/assets/fonts/PretendardGOV-Medium.subset.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard GOV';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/assets/fonts/PretendardGOV-Bold.subset.woff2') format('woff2'),
+        url('/assets/fonts/PretendardGOV-Bold.subset.woff') format('woff');
+}
+
 *,
 *::before,
 *::after {
@@ -12,7 +39,7 @@
 body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard GOV', 'Apple SD Gothic Neo', system-ui, sans-serif;
 }
 
 
