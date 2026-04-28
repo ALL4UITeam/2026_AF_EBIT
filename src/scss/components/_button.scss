@@ -12,14 +12,32 @@
     padding: 0 14px;
     font-family: inherit;
     transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    --btn-bg: var(--al-color-white);
+    --btn-bg-hover: var(--al-color-white-hover);
+    --btn-bg-focus: var(--al-color-white-focus);
+    --btn-bg-disabled: var(--al-color-white-dis);
+    --btn-color: var(--al-color-text);
+    --btn-color-disabled: var(--al-color-text-muted);
+    background: var(--btn-bg);
+    color: var(--btn-color);
 
-    &:disabled {
-        background: #e7edf4;
-        color: #9aa8b7;
-        border-color: #e7edf4;
-        cursor: not-allowed;
+    &:hover:not(:disabled) {
+        background: var(--btn-bg-hover);
+        border-color: var(--btn-border-hover);
     }
 
+    &:focus-visible {
+        background: var(--btn-bg-focus);
+        border-color: var(--btn-border-focus);
+        outline: none;
+    }
+
+    &:disabled {
+        background: var(--btn-bg-disabled);
+        color: var(--btn-color-disabled);
+        border-color: var(--btn-border-disabled, var(--btn-bg-disabled));
+        cursor: not-allowed;
+    }
 }
 
 // --- sizes (단일 modifier) ---
@@ -28,6 +46,7 @@
     height: 56px;
     font-size: 19px;
     border-radius: 8px;
+    min-width: 90px;
 }
 
 .btn--lg,
@@ -35,6 +54,7 @@
     height: 48px;
     font-size: 17px;
     border-radius: 6px;
+    min-width: 78px;
 }
 
 .btn--md,
@@ -42,6 +62,7 @@
     height: 40px;
     font-size: 15px;
     border-radius: 6px;
+    min-width: 64px;
 }
 
 .btn--sm,
@@ -49,6 +70,7 @@
     height: 32px;
     font-size: 15px;
     border-radius: 4px;
+    min-width: 60px;
 }
 
 .btn--xs,
@@ -57,35 +79,39 @@
     font-size: 12px;
 }
 
+.btn--pill,
+.al-btn--pill {
+    border-radius: var(--al-radius-pill);
+}
+
 // --- types ---
 .btn--primary,
 .al-btn--primary {
-    background: var(--al-color-primary);
-    color: #fff;
-
-    &:hover:not(:disabled) {
-        background: var(--al-color-primary-light);
-    }
+    --btn-bg: var(--al-color-primary);
+    --btn-bg-hover: var(--al-color-primary-hover);
+    --btn-bg-focus: var(--al-color-primary-focus);
+    --btn-color: #fff;
+    --btn-color-disabled: var(--al-color-text-muted);
 }
 
 .btn--secondary,
 .al-btn--secondary {
-    background: var(--al-color-surface);
-    border-color: var(--al-color-border);
-    color: var(--al-color-text);
-
-    &:hover:not(:disabled) {
-        background: var(--al-color-surface-soft);
-    }
+    --btn-bg: var(--al-color-secondary);
+    --btn-bg-hover: var(--al-color-secondary-hover);
+    --btn-bg-focus: var(--al-color-secondary-focus);
+    --btn-bg-disabled: var(--al-color-secondary-dis);
+    --btn-color: var(--al-color-primary);
+    --btn-color-disabled: var(--al-color-text-muted);
+    border: 1px solid #03699C;
 }
 
-.btn--tertiary,
-.al-btn--tertiary {
-    background: var(--al-color-tertiary-bg);
-    color: var(--al-color-tertiary-text);
-    border-color: transparent;
-
-    &:hover:not(:disabled) {
-        filter: brightness(0.97);
-    }
+.btn--white,
+.al-btn--white {
+    --btn-bg: var(--al-color-white);
+    --btn-bg-hover: var(--al-color-white-hover);
+    --btn-bg-focus: var(--al-color-white-focus);
+    --btn-bg-disabled: var(--al-color-white-dis);
+    --btn-color: var(--al-color-text);
+    --btn-color-disabled: var(--al-color-text-muted);
+    border: 1px solid #1E293B;
 }

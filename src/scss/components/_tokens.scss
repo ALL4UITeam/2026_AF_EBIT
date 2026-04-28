@@ -5,10 +5,21 @@
 :root {
     // Brand / semantic
     --al-color-primary: #047BB6;
+    --al-color-primary-hover: #03699C;
+    --al-color-primary-focus: #025782;
+    --al-color-primary-dis: #CBD5E1;
     --al-color-primary-dark: #052031;
     --al-color-primary-light: #57a1ea;
-    --al-color-secondary: #8fad57;
+    --al-color-secondary: #F0F7FF;
+    --al-color-secondary-hover: #E0EFFF;
+    --al-color-secondary-focus: #BADAFF;
+    --al-color-secondary-dis: #CBD5E1;
     --al-color-secondary-dark: #263017;
+    --al-color-white: #fff;
+    --al-color-white-hover: #F8FAFC;
+    --al-color-white-focus: #F1F5F9;
+    --al-color-white-dis: #CBD5E1;
+
     --al-color-accent: #e90081;
     --al-color-accent-dark: #410026;
     --al-color-text: #04071a;

@@ -3,12 +3,13 @@
     &__list {
         display: inline-flex;
         gap: 2px;
-        border: 1px solid var(--al-color-border);
-        border-radius: 6px;
-        padding: 3px;
-        margin: 6px 0;
+        border: 1px solid #E2E8F0;
+        border-radius: 8px;
+        padding: 4px;
         list-style: none;
-    }
+        background: #F1F5F9;
+        gap:10px;
+    }   
 
     &__tab {
         border: 0;
@@ -18,17 +19,18 @@
         cursor: pointer;
         font-family: inherit;
         font-size: 13px;
-        color: var(--al-color-text);
-
+        color: #1E293B;
+        min-height: 32px;
+        min-width: 97px;
         &:hover:not(&--active) {
             background: rgba(18, 118, 167, 0.08);
         }
 
         &--active,
         &.is-active {
-            background: var(--al-color-primary);
-            color: #fff;
-            font-weight: 600;
+            background: #fff;
+            color: #1E293B;
+            font-weight: 500;
         }
 
         &:focus-visible {
@@ -39,50 +41,8 @@
 
     &__panel {
         display: none;
-        border: 1px solid var(--al-color-border);
-        border-radius: var(--al-radius-md);
-        padding: 12px;
-
         &--active {
             display: block;
-        }
-    }
-
-    &--segmented,
-    &--status {
-        .tabs__list,
-        .al-tabs__list {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            width: min(640px, 100%);
-            gap: 0;
-            margin: 0;
-            padding: 6px;
-            border: 1px solid #d9e2ec;
-            border-radius: 10px;
-            background: #eef3f8;
-        }
-
-        .tabs__tab,
-        .al-tabs__tab {
-            min-height: 36px;
-            border-radius: 6px;
-            padding: 0 16px;
-            background: transparent;
-            font-size: 14px;
-            font-weight: 800;
-            color: #46586d;
-
-            &:hover:not(.tabs__tab--active):not(.al-tabs__tab--active):not(.is-active) {
-                background: rgba(255, 255, 255, 0.45);
-            }
-
-            &--active,
-            &.is-active {
-                background: #fff;
-                color: var(--al-color-text);
-                box-shadow: 0 2px 8px rgba(4, 7, 26, 0.1);
-            }
         }
     }
 
@@ -96,9 +56,7 @@
     &--line {
         .tabs__list,
         .al-tabs__list {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(120px, 1fr));
-            width: min(760px, 100%);
+            display: flex;
             gap: 0;
             margin: 0;
             padding: 0;
@@ -115,7 +73,7 @@
             border-radius: 0;
             padding: 0 14px;
             background: transparent;
-            font-size: 14px;
+            font-size: 21px;
             font-weight: 800;
             color: #8a97a8;
 
@@ -132,23 +90,22 @@
 
                 &::before {
                     content: '';
-                    display: inline-block;
-                    width: 12px;
-                    height: 8px;
-                    margin-right: 6px;
-                    border-left: 2px solid currentColor;
-                    border-bottom: 2px solid currentColor;
-                    transform: rotate(-45deg) translateY(-3px);
-                }
-
-                &::after {
-                    content: '';
                     position: absolute;
                     left: 0;
                     right: 0;
                     bottom: -1px;
                     height: 2px;
                     background: currentColor;
+                    
+                }
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 20px;
+                    height: 16px;
+                    margin-left: 6px;
+                    background-image: url('@/assets/images/icon/ico-tab-select.svg');
                 }
             }
         }

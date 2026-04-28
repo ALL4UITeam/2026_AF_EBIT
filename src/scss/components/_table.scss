@@ -238,60 +238,56 @@
 	font-weight: 600;
 }
 
-/* =========================
-   7. BEM 공통 테이블
-========================= */
-.table {
-	display: grid;
-	grid-template-columns: repeat(var(--column-count, 5), 1fr);
+.al-table {
 	width: 100%;
+	border-collapse: collapse;
 	background: #fff;
 	color: var(--al-color-text);
+	table-layout: fixed;
 
-	&__header,
-	&__body {
-		grid-column: 1 / -1;
-		display: grid;
-		grid-template-columns: subgrid;
+	th,
+	td {
+		padding: 11px 20px;
+		font-size: 15px;
+		text-align: center;
+		vertical-align: middle;
 	}
 
-	&__header {
+	thead {
 		background: var(--al-color-surface-tint);
-		border-radius: 12px;
-		font-weight: 700;
-	}
 
-	&__row {
-		grid-column: 1 / -1;
-		display: grid;
-		grid-template-columns: subgrid;
-		border-bottom: 1px solid #e6ebf5;
+		th {
+			font-weight: 700;
 
-		&:last-child {
-			border-bottom: 0;
+			&:first-child {
+				border-radius: 12px 0 0 12px;
+			}
+
+			&:last-child {
+				border-radius: 0 12px 12px 0;
+			}
 		}
 	}
 
-	&__cell {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 0;
-		padding: 14px 12px;
-		font-size: 15px;
+	tbody {
+		tr {
+			border-bottom: 1px solid #e6ebf5;
+			text-decoration: none;
+			&:last-child {
+				border-bottom: 0;
+			}
+			td{
+				padding: 18px 20px;
+			}
+		}
 	}
 
 	&__link {
 		display: block;
-		width: 100%;
 		min-width: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		color: var(--al-color-primary);
-	}
-
-	&--wide {
-		grid-template-columns: repeat(var(--column-count), minmax(80px, 1fr));
 	}
 }

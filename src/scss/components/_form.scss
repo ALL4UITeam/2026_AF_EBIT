@@ -325,6 +325,14 @@
             display: block;
         }
 
+        &--calendar {
+            background: url('/assets/images/icon/ico-calendar.svg') no-repeat center / 16px 16px;
+        }
+
+        &--search {
+            background: url('/assets/images/icon/ico-search.svg') no-repeat center / 16px 16px;
+        }
+
         &:focus-visible {
             outline: 2px solid var(--al-color-primary);
             outline-offset: 1px;
@@ -362,10 +370,10 @@
         &::after {
             content: '';
             position: absolute;
-            right: 2px;
+            right: -3px;
             top: 50%;
-            width: 5px;
-            height: 5px;
+            width: 7px;
+            height: 7px;
             border-right: 1.5px solid #33363d;
             border-bottom: 1.5px solid #33363d;
             transform: translateY(-65%) rotate(45deg);
@@ -557,15 +565,11 @@
         grid-template-columns: 140px minmax(0, 1fr);
         gap: 18px;
         align-items: start;
-
         .form__label,
         .form-label {
-            min-height: 44px;
+            min-height: 40px;
             display: flex;
             align-items: center;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--al-color-text-subtle);
         }
     }
 
@@ -592,8 +596,8 @@
 // ====== 폼 레이블 ======
 .form__label,
 .form-label {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
     color: #333;
     margin: 0;
     

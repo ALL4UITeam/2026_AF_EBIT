@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>가이드 | E-BIT 관리자</title>
+  
+  <link rel="stylesheet" href="./assets/fonts/pretendard.css">
+  <link rel="stylesheet" href="./lib/simplebar/simplebar.css">
+  <link rel="stylesheet" href="./lib/dragula/dragula.min.css">
+  <link rel="stylesheet" href="./lib/jQuery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="./lib/jQuery-ui/jquery-ui.theme.min.css">
+  <link rel="stylesheet" href="./lib/datetimepicker/jquery.datetimepicker.css">
+  
+  
+  <script src="./lib/jQuery/jquery-3.7.1.js"></script>
+  <script src="./lib/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+  <script src="./lib/jQuery-ui/jquery-ui.min.js"></script>
+  <script src="./lib/simplebar/simplebar.min.js"></script>
+  <script src="./lib/dragula/dragula.min.js"></script>
+  <script type="module" src="/2026_AF_EBIT/assets/index.js"></script>
+  <link rel="stylesheet" href="/2026_AF_EBIT/assets/style.css">
+</head>
+
+<body class="al-admin">
+  <div class="al-wrap">
+
+    <header class="al-header">
+        <div class="al-header__left">
+            <button type="button" class="al-header__menu-btn" id="alMenuBtn" aria-label="메뉴 열기">
+                <span class="al-header__hamburger" aria-hidden="true"><span></span></span>
+            </button>
+            <a href="#" class="al-header__brand">
+                <img src="/2026_AF_EBIT/assets/images/logo.svg" alt="" />
+            </a>
+        </div>
+    
+        <div class="al-header__right">
+            <button type="button" class="al-header__notify" aria-label="알림">
+                <span class="al-header__notify-icon" aria-hidden="true"></span>
+            </button>
+            <div class="al-header__user">
+                <div class="al-header__user-name"><strong>관리자</strong>님</div>
+                <div class="al-header__avatar" aria-hidden="true">
+                    <span class="al-header__avatar-icon"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="al-body">
+      <div class="al-backdrop" id="alBackdrop" aria-hidden="true"></div>
+
+      <aside class="al-sidenav" id="alSidenav" aria-label="주 메뉴">
+          <div class="al-sidenav__scroll">
+              <ul class="al-sidenav__list">
+      
+                  <!-- 대시보드 (단일 메뉴) -->
+                  <li class="al-sidenav__item">
+                      <a href="#" class="al-sidenav__link">
+                          <span class="al-sidenav__icon al-sidenav__icon--m01" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">대시보드</span>
+                      </a>
+                  </li>
+      
+                  <!-- 앱 관리 (2depth, 현재 활성) -->
+                  <li class="al-sidenav__item is-open" data-nav="app">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m02" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">앱관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink is-active">앱 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">배포 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 단말 관리 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m03" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">단말관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">운영 대시보드</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">단말 등록</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">단말 등록</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">그룹 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">단말 상태 현황</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">원격 제어</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 컨텐츠 관리 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m04" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">컨텐츠관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">텍스트 설정</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">텍스트 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 장비분석 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m05" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">장비분석</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">분석 현황</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">교체주기 분석</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">기기 유형 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">배터리 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 운영관리 -->
+                  <li class="al-sidenav__item">
+                      <a href="#" class="al-sidenav__link">
+                          <span class="al-sidenav__icon al-sidenav__icon--m06" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">운영관리</span>
+                      </a>
+                  </li>
+      
+                  <!-- 시스템관리 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m07" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">시스템관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">사용자 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">그룹 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">권한 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">작업 이력</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">공통 코드 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </aside>
+      <main class="al-content" id="alContent">
+        <div class="mdm-list">
+          <button type="button" class="btn btn--primary btn--md" data-al-modal-open="mdm-regist">단말 등록(설치업체)</button>
+          <button type="button" class="btn btn--primary btn--md" data-al-modal-open="mdm-detail">단말 상세 정보</button>
+        </div>
+
+        <div class="modal-backdrop" id="mdm-regist" data-al-modal-backdrop data-open="false" aria-hidden="true">
+          <div class="modal modal--form" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="modal__header">
+              <h2 class="modal__title" id="appRegistTitle">단말 등록(설치업체)</h2>
+              <button type="button" class="modal__close" data-al-modal-close="mdm-regist" aria-label="닫기">닫기</button>
+            </div>
+            <div class="modal__body">
+              <div class="mdm-wrapper">
+                <nav class="step" aria-label="작업 진행 단계">
+                  <ol class="step__list">
+                    <li class="step__item step__item--current">
+                      <span class="step__marker" aria-hidden="true"><i><img class="step-icon__image"
+                            src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.2251%2022.8982L26.7914%2014.3674L25.2914%2012.8844L18.2193%2019.9678L14.6835%2016.4261L13.1922%2017.9007L18.2251%2022.8982ZM2.30762%2033.7178V31.6236H37.6918V33.7178H2.30762ZM6.77345%2029.5511C6.05706%2029.5511%205.44345%2029.2957%204.93262%2028.7849C4.42178%2028.274%204.16637%2027.6606%204.16637%2026.9444V8.82486C4.16637%208.10847%204.42178%207.49486%204.93262%206.98402C5.44345%206.47319%206.05706%206.21777%206.77345%206.21777H33.226C33.9423%206.21777%2034.556%206.47319%2035.0668%206.98402C35.5776%207.49486%2035.833%208.10847%2035.833%208.82486V26.9444C35.833%2027.6606%2035.5776%2028.274%2035.0668%2028.7849C34.556%2029.2957%2033.9423%2029.5511%2033.226%2029.5511H6.77345ZM6.77345%2027.4574H33.226C33.3543%2027.4574%2033.4719%2027.4039%2033.5789%2027.2969C33.6855%2027.19%2033.7389%2027.0725%2033.7389%2026.9444V8.82486C33.7389%208.69652%2033.6855%208.57889%2033.5789%208.47194C33.4719%208.36528%2033.3543%208.31194%2033.226%208.31194H6.77345C6.64512%208.31194%206.52748%208.36528%206.42053%208.47194C6.31387%208.57889%206.26053%208.69652%206.26053%208.82486V26.9444C6.26053%2027.0725%206.31387%2027.19%206.42053%2027.2969C6.52748%2027.4039%206.64512%2027.4574%206.77345%2027.4574Z'%20fill='white'/%3e%3c/svg%3e" alt="단말선택" aria-hidden="true"></i></span>
+                      <span class="step__meta">1단계</span>
+                      <strong class="step__label">단말 선택</strong>
+                    </li>
+                    <li class="step__item step__item--upcoming">
+                      <span class="step__marker" aria-hidden="true"><i><img class="step-icon__image"
+                            src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.3201%2013.6753V11.5816H29.6793V13.6753H15.3201ZM15.3201%2018.4832V16.3891H29.6793V18.4832H15.3201ZM20.2776%2035.8337H9.70051C8.62329%2035.8337%207.7094%2035.4584%206.95884%2034.7078C6.20829%2033.9573%205.83301%2033.0434%205.83301%2031.9662V26.8595H10.833V4.16699H34.1663V18.6691C33.8066%2018.6457%2033.4515%2018.6609%2033.1009%2018.7145C32.7504%2018.7684%2032.4075%2018.858%2032.0722%2018.9832V6.26116H12.9272V26.8595H23.4418L21.348%2028.9532H7.92717V31.9662C7.92717%2032.4687%208.09773%2032.8899%208.43884%2033.2299C8.77967%2033.5696%209.19092%2033.7395%209.67259%2033.7395H20.2776V35.8337ZM23.5255%2035.8337V31.4299L32.5734%2022.4232C32.7806%2022.216%2033.005%2022.0702%2033.2463%2021.9857C33.4877%2021.9016%2033.7293%2021.8595%2033.9709%2021.8595C34.2293%2021.8595%2034.4819%2021.9085%2034.7288%2022.0066C34.9755%2022.1049%2035.1972%2022.2524%2035.3938%2022.4491L36.9355%2024.0066C37.1263%2024.2141%2037.2681%2024.4385%2037.3609%2024.6799C37.4534%2024.9213%2037.4997%2025.1627%2037.4997%2025.4041C37.4997%2025.6455%2037.4501%2025.8912%2037.3509%2026.1412C37.252%2026.3912%2037.1087%2026.6198%2036.9209%2026.827L27.9293%2035.8337H23.5255ZM25.5126%2033.8466H27.0959L32.5059%2028.4103L31.7401%2027.6187L30.9643%2026.837L25.5126%2032.2632V33.8466ZM31.7401%2027.6187L30.9643%2026.837L32.5059%2028.4103L31.7401%2027.6187Z'%20fill='%231C8CF4'/%3e%3c/svg%3e" alt="단말선택" aria-hidden="true"></i></span>
+                      <span class="step__meta">2단계</span>
+                      <strong class="step__label">작업자 선택</strong>
+                    </li>
+                    <li class="step__item step__item--upcoming" aria-current="step">
+                      <span class="step__marker" aria-hidden="true"><i><img class="step-icon__image"
+                            src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10.7891%2018.9053C11.4688%2018.9053%2012.0469%2019.1453%2012.5225%2019.625C12.9982%2020.1047%2013.2363%2020.6854%2013.2363%2021.3672C13.2363%2022.0488%2012.9988%2022.6263%2012.5244%2023.0996C12.05%2023.5732%2011.4727%2023.8105%2010.793%2023.8105C10.1137%2023.8105%209.53603%2023.5746%209.06055%2023.1035C8.58492%2022.6328%208.34675%2022.0533%208.34668%2021.3652C8.34668%2020.6819%208.58415%2020.1004%209.05859%2019.6221C9.5329%2019.1442%2010.1099%2018.9054%2010.7891%2018.9053Z'%20fill='%231C8CF4'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M10.793%2012.8984C13.2696%2012.8984%2015.341%2013.7441%2017.0068%2015.4346C18.6724%2017.1248%2019.5059%2019.242%2019.5059%2021.7861C19.5059%2022.8847%2019.2638%2023.9876%2018.7803%2025.0947C18.2967%2026.2018%2017.6938%2027.2616%2016.9717%2028.2734C16.1311%2029.4659%2015.2139%2030.565%2014.2217%2031.5703C13.2296%2032.5754%2012.3411%2033.4339%2011.5557%2034.1455H35.833V35.834H4.16699V34.1455H10C9.21094%2033.4225%208.32567%2032.5588%207.34473%2031.5537C6.36362%2030.5484%205.45286%2029.4545%204.6123%2028.2734C3.89009%2027.2615%203.28732%2026.2019%202.80371%2025.0947C2.3201%2023.9875%202.07812%2022.8847%202.07812%2021.7861C2.07813%2019.242%202.91146%2017.1248%204.57812%2015.4346C6.2447%2013.7441%208.31621%2012.8985%2010.793%2012.8984ZM10.791%2014.9932C8.8603%2014.9932%207.27426%2015.629%206.0332%2016.9014C4.79237%2018.1741%204.17188%2019.802%204.17188%2021.7842C4.17189%2022.6897%204.40204%2023.6236%204.8623%2024.585C5.32282%2025.5465%205.89236%2026.4836%206.57031%2027.3965C7.24834%2028.3098%207.96518%2029.163%208.7207%2029.9561C9.47654%2030.7494%2010.1673%2031.4391%2010.792%2032.0244C11.4167%2031.4391%2012.1065%2030.7494%2012.8623%2029.9561C13.6179%2029.163%2014.3346%2028.3098%2015.0127%2027.3965C15.6907%2026.4836%2016.2602%2025.5445%2016.7207%2024.5791C17.181%2023.6135%2017.4111%2022.6808%2017.4111%2021.7822C17.4111%2019.8008%2016.7907%2018.1738%2015.5498%2016.9014C14.3084%2015.6291%2012.7218%2014.9932%2010.791%2014.9932Z'%20fill='%231C8CF4'/%3e%3cpath%20d='M33.2266%204.16699C33.9428%204.16707%2034.5566%204.42284%2035.0674%204.93359C35.578%205.44436%2035.833%206.05819%2035.833%206.77441V21.7227C35.8329%2022.4389%2035.5781%2023.0527%2035.0674%2023.5635C34.5566%2024.0742%2033.9428%2024.329%2033.2266%2024.3291H27.4102L24.6533%2028.7412L21.9912%2024.4648L23.085%2022.2354L24.6533%2024.7695L26.2373%2022.2354H33.7393V6.77441C33.7393%206.62469%2033.6908%206.50138%2033.5947%206.40527C33.4987%206.30933%2033.3761%206.26082%2033.2266%206.26074H16.6416C16.4993%206.26084%2016.3779%206.30926%2016.2783%206.40527C16.1787%206.50136%2016.1289%206.62478%2016.1289%206.77441V10.3291H14.0352V6.77441C14.0352%206.05821%2014.2905%205.44435%2014.8008%204.93359C15.3115%204.42287%2015.9254%204.1671%2016.6416%204.16699H33.2266Z'%20fill='%231C8CF4'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M25.7158%208.67773C26.5466%208.67774%2027.281%208.94351%2027.9072%209.47363C28.5439%2010.0128%2028.8662%2010.7104%2028.8662%2011.5469C28.8662%2012.0134%2028.7572%2012.4418%2028.5371%2012.8262L28.4355%2012.9883C28.2426%2013.2732%2028.009%2013.5089%2027.7383%2013.6973C28.0978%2013.88%2028.4082%2014.1413%2028.666%2014.4805C29.0271%2014.956%2029.206%2015.5123%2029.2061%2016.1387C29.2061%2017.0441%2028.8565%2017.7866%2028.1631%2018.3418C27.4871%2018.8826%2026.7157%2019.1553%2025.8584%2019.1553H21.7412V8.67773H25.7158ZM23.5371%2017.4863H25.7852C26.2594%2017.4863%2026.6384%2017.3398%2026.9404%2017.0547C27.2456%2016.7666%2027.3915%2016.4312%2027.3916%2016.0361C27.3916%2015.6503%2027.2472%2015.3184%2026.9424%2015.0293C26.6429%2014.7454%2026.2615%2014.5977%2025.7783%2014.5977H23.5371V17.4863ZM23.5371%2012.9746H25.6348C26.0477%2012.9746%2026.389%2012.8458%2026.6719%2012.5908C26.9505%2012.3397%2027.0869%2012.033%2027.0869%2011.6533C27.0869%2011.273%2026.9489%2010.9658%2026.667%2010.7139C26.3787%2010.4563%2026.0413%2010.3271%2025.6426%2010.3271H23.5371V12.9746Z'%20fill='%231C8CF4'/%3e%3c/svg%3e" alt="정류장" aria-hidden="true"></i></span>
+                      <span class="step__meta">3단계</span>
+                      <strong class="step__label">작업 내용</strong>
+                    </li>
+                    <li class="step__item step__item--upcoming">
+                      <span class="step__marker" aria-hidden="true"><i><img class="step-icon__image"
+                            src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.3621%2029.1204L33.0117%2011.4817L31.5117%209.99042L15.3533%2026.1292L7.46583%2018.2329L5.96583%2019.7325L15.3621%2029.1204ZM15.3621%2032.0946L3%2019.7325L7.46583%2015.2692L15.3621%2023.1654L31.5192%207L35.9996%2011.4571L15.3621%2032.0946Z'%20fill='%231C8CF4'/%3e%3c/svg%3e" alt="완료" aria-hidden="true"></i></span>
+                      <span class="step__meta">4단계</span>
+                      <strong class="step__label">완료</strong>
+                    </li>
+                  </ol>
+                </nav>
+                <div class="mdm-content">
+                  <div class="modal-card">
+                    <div class="modal-card__header">
+                      <h3 class="modal-card__title">단말 선택</h3>
+                    </div>
+                    <div class="modal-card__body">
+                      <div class="modal_card_content">
+                        <div class="search">
+                          <p class="search__total">총 <strong>5</strong>건</p>
+                          <form class="form form--toolbar form--search" action="#" role="search" aria-label="가이드 검색 폼">
+                            <span class="form__field form__field--search">
+                              <input class="form__input" type="search" inputmode="search" autocomplete="off"
+                                placeholder="검색어를 입력해주세요." aria-label="검색어">
+                              <button type="button" class="form__icon-btn" aria-label="검색"></button>
+                            </span>
+                          </form>
+                        </div>
+
+                        <div class="table-wrapper">
+                          <table class="tbl-style1">
+                            <colgroup>
+                              <col style="width: 100px;">
+                              <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>&nbsp;</th>
+                                <th class="left">단말 ID</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <label class="al-radio"><input class="al-radio__input" type="radio"><span class="al-radio__control" aria-hidden="true"></span></label>
+                                </td>
+                                <td class="left">1234567890</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- // table-wrapper -->
+                        <nav class="pagination al-pagination" data-al-pagination data-al-pagination-current="1"
+                          data-al-pagination-total="99" aria-label="페이지 네비게이션">
+                          <button type="button" class="pagination__nav al-pagination__nav" data-al-page-first
+                            aria-label="첫 페이지">처음</button>
+                          <button type="button" class="pagination__nav al-pagination__nav al-pagination__nav--prev"
+                            data-al-page-prev aria-label="이전 페이지">이전</button>
+                          <div class="pagination__pages al-pagination__pages" data-al-pagination-pages></div>
+                          <button type="button" class="pagination__nav al-pagination__nav al-pagination__nav--next"
+                            data-al-page-next aria-label="다음 페이지">다음</button>
+                          <button type="button" class="pagination__nav al-pagination__nav" data-al-page-last
+                            aria-label="마지막 페이지">마지막</button>
+                        </nav>
+                        <!-- // pagination -->
+                      </div>
+                    </div>
+                    <!-- //modal-card__body -->
+                  </div>
+                </div>
+                <!-- // mdm-content -->
+              </div>
+              <!-- // mdm-wrapper -->
+            </div>
+            <div class="modal__footer">
+              <button type="button" class="btn btn--secondary btn--md" data-al-modal-close="mdm-regist">취소</button>
+              <div class="modal__actions">
+                <!-- <button type="button" class="btn btn--secondary btn--md">이전</button> -->
+                <button type="button" class="btn btn--primary btn--md">다음</button>
+              </div>
+            </div>
+            <!-- //modal__footer -->
+          </div>
+        </div>
+        <!-- // mdm-regist -->
+        
+        <div class="modal-backdrop" id="mdm-detail" data-al-modal-backdrop data-open="true" aria-hidden="true">
+          <div class="modal modal--form" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="modal__header">
+              <h2 class="modal__title" id="appRegistTitle">단말 상세 정보</h2>
+              <button type="button" class="modal__close" data-al-modal-close="mdm-detail" aria-label="닫기">닫기</button>
+            </div>
+            <div class="modal__body">
+              <div class="mdm-wrapper">
+                
+                <div class="mdm-content">
+                  <div class="modal-card">
+                    <div class="modal-card__header">
+                      <h3 class="modal-card__title">단말 선택</h3>
+                    </div>
+                    <div class="modal-card__body">
+                      <div class="modal_card_content">
+                        <div class="search">
+                          <p class="search__total">총 <strong>5</strong>건</p>
+                          <form class="form form--toolbar form--search" action="#" role="search" aria-label="가이드 검색 폼">
+                            <span class="form__field form__field--search">
+                              <input class="form__input" type="search" inputmode="search" autocomplete="off"
+                                placeholder="검색어를 입력해주세요." aria-label="검색어">
+                              <button type="button" class="form__icon-btn" aria-label="검색"></button>
+                            </span>
+                          </form>
+                        </div>
+
+                        <div class="table-wrapper">
+                          <table class="tbl-style1">
+                            <colgroup>
+                              <col style="width: 100px;">
+                              <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>&nbsp;</th>
+                                <th class="left">단말 ID</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <label class="al-radio"><input class="al-radio__input" type="radio"><span class="al-radio__control" aria-hidden="true"></span></label>
+                                </td>
+                                <td class="left">1234567890</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- // table-wrapper -->
+                        <nav class="pagination al-pagination" data-al-pagination data-al-pagination-current="1"
+                          data-al-pagination-total="99" aria-label="페이지 네비게이션">
+                          <button type="button" class="pagination__nav al-pagination__nav" data-al-page-first
+                            aria-label="첫 페이지">처음</button>
+                          <button type="button" class="pagination__nav al-pagination__nav al-pagination__nav--prev"
+                            data-al-page-prev aria-label="이전 페이지">이전</button>
+                          <div class="pagination__pages al-pagination__pages" data-al-pagination-pages></div>
+                          <button type="button" class="pagination__nav al-pagination__nav al-pagination__nav--next"
+                            data-al-page-next aria-label="다음 페이지">다음</button>
+                          <button type="button" class="pagination__nav al-pagination__nav" data-al-page-last
+                            aria-label="마지막 페이지">마지막</button>
+                        </nav>
+                        <!-- // pagination -->
+                      </div>
+                    </div>
+                    <!-- //modal-card__body -->
+                  </div>
+                </div>
+                <!-- // mdm-content -->
+              </div>
+              <!-- // mdm-wrapper -->
+            </div>
+            <div class="modal__footer">
+              <button type="button" class="btn btn--secondary btn--md" data-al-modal-close="mdm-regist">취소</button>
+              <div class="modal__actions">
+                <!-- <button type="button" class="btn btn--secondary btn--md">이전</button> -->
+                <button type="button" class="btn btn--primary btn--md">다음</button>
+              </div>
+            </div>
+            <!-- //modal__footer -->
+          </div>
+        </div>
+        <!-- // mdm-regist -->
+    </main>
+    <!-- // al-content -->
+  </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
