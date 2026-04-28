@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pwInput.type = isPassword ? "text" : "password";
       togglePwBtn.classList.toggle("is-visible", isPassword);
       togglePwBtn.setAttribute("aria-label", isPassword ? "비밀번호 숨기기" : "비밀번호 표시");
+      togglePwBtn.setAttribute("aria-pressed", String(isPassword));
       togglePwBtn.setAttribute("title", isPassword ? "비밀번호 숨기기" : "비밀번호 표시");
     });
   }
