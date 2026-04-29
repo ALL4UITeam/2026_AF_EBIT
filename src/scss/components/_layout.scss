@@ -41,7 +41,6 @@ body.al-admin {
     height: 100vh;
     overflow: hidden;
     background: $al-bg;
-    font-family: 'Pretendard GOV', 'Apple SD Gothic Neo', system-ui, sans-serif;
     color: #1e293b;
 }
 
@@ -466,31 +465,7 @@ body.al-admin {
 // ----- Page Header (banner) -----
 .al-page-header {
     position: relative;
-    border-radius: 16px;
     margin-bottom: 40px;
-    &::before {
-        content: '';
-        position: absolute;
-        width: 320px;
-        height: 320px;
-        right: -90px;
-        top: -120px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.10);
-        pointer-events: none;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        width: 140px;
-        height: 140px;
-        left: 42%;
-        bottom: -60px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.07);
-        pointer-events: none;
-    }
 }
 
 .al-page-header__inner {

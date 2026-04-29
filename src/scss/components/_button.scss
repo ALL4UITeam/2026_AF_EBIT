@@ -8,7 +8,7 @@
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 400;
     padding: 0 14px;
     font-family: inherit;
     transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -41,43 +41,38 @@
 }
 
 // --- sizes (단일 modifier) ---
-.btn--xl,
-.al-btn--xl {
+.btn--lg,
+.al-btn--lg {
     height: 56px;
     font-size: 19px;
     border-radius: 8px;
     min-width: 90px;
 }
 
-.btn--lg,
-.al-btn--lg {
+.btn--md,
+.al-btn--md {
     height: 48px;
     font-size: 17px;
     border-radius: 6px;
     min-width: 78px;
 }
 
-.btn--md,
-.al-btn--md {
+.btn--sm,
+.al-btn--sm {
     height: 40px;
     font-size: 15px;
     border-radius: 6px;
     min-width: 64px;
 }
 
-.btn--sm,
-.al-btn--sm {
+.btn--xs,
+.al-btn--xs {
     height: 32px;
     font-size: 15px;
     border-radius: 4px;
     min-width: 60px;
 }
 
-.btn--xs,
-.al-btn--xs {
-    height: 26px;
-    font-size: 12px;
-}
 
 .btn--pill,
 .al-btn--pill {
@@ -114,4 +109,13 @@
     --btn-color: var(--al-color-text);
     --btn-color-disabled: var(--al-color-text-muted);
     border: 1px solid #1E293B;
+}
+
+.btn--danger,
+.al-btn--danger {
+    --btn-bg: #d40000;
+    --btn-bg-hover: #b80000;
+    --btn-bg-focus: #b80000;
+    --btn-color: #fff;
+    --btn-color-disabled: var(--al-color-text-muted);
 }

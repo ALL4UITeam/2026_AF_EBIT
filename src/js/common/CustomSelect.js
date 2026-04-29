@@ -80,6 +80,8 @@ class CustomSelect {
   }
   
   setupEvents() {
+    this.boundPosition = this.updateDropdownPosition.bind(this);
+
     // 버튼 클릭
     this.button.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -109,6 +111,9 @@ class CustomSelect {
     if (!this.wrapper.dataset.csId) {
       this.wrapper.dataset.csId = `cs-${Math.random().toString(16).slice(2)}`;
     }
+
+    window.addEventListener('resize', this.boundPosition);
+    window.addEventListener('scroll', this.boundPosition, true);
   }
   
   toggle() {
@@ -216,11 +221,20 @@ class CustomSelect {
   }
 
   setDropDirection() {
+    this.updateDropdownPosition();
+  }
+
+  updateDropdownPosition() {
+    if (!this.isOpen) return;
+
     const rect = this.button.getBoundingClientRect();
     const gap = 6;
     const spaceBelow = window.innerHeight - rect.bottom - gap;
     const spaceAbove = rect.top - gap;
-    this.wrapper.classList.toggle('is-up', spaceBelow < 180 && spaceAbove > spaceBelow);
+    const dropdownHeight = Math.min(this.dropdown.scrollHeight || 240, 240);
+    const isUp = spaceBelow < dropdownHeight && spaceAbove > spaceBelow;
+
+    this.wrapper.classList.toggle('is-up', isUp);
   }
 
   close() {

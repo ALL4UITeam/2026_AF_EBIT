@@ -89,6 +89,10 @@
         padding: 0;
         display: grid;
         gap: 10px;
+
+        &--compact {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -146,7 +150,7 @@
             height: 20px;
             background-image: url('@/assets/images/icon/ico-down.svg');
             background-repeat: no-repeat;
-            
+            background-position: center;
         }
 
         &--danger {

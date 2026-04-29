@@ -114,7 +114,7 @@
     }
 
     &__stats-total-num {
-        font-size: 40px;
+        font-size: 60px;
         font-weight: 800;
         color: var(--al-color-primary);
         letter-spacing: -0.5px;
@@ -179,6 +179,41 @@
             font-weight: 500;
             line-height: 100%; /* 17px */
             color:#1E293B;
+        }
+    }
+
+    &--terminal {
+
+        .status-card__stats-list {
+            min-height: 60px;
+        }
+
+        .status-card__stats-item {
+            border: 0;
+        }
+
+        .status-card__stats-item--good {
+            background: #f7f9f0;
+
+            .status-card__stats-value strong {
+                color: #228738;
+            }
+        }
+
+        .status-card__stats-item--normal {
+            background: #fff3db;
+
+            .status-card__stats-value strong {
+                color: #c78500;
+            }
+        }
+
+        .status-card__stats-item--replace {
+            background: #fdefec;
+
+            .status-card__stats-value strong {
+                color: #de3412;
+            }
         }
     }
 }

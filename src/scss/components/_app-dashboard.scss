@@ -62,17 +62,13 @@
     }
 
     &__more {
-        color: #1f9cdc;
-        font-size: 11px;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        border: 1px solid #d5ebf7;
-        display: inline-grid;
-        place-items: center;
-        line-height: 1;
-        background: #f3fbff;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        overflow: hidden;
+        background: url('/assets/images/common/dash-arrow.png') no-repeat center / contain;
         text-decoration: none;
+        text-indent: -9999px;
     }
 
     &__status-summary {

@@ -9,6 +9,16 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.modal--content-station{
+  width: min(960px, calc(100vw - 32px));
+
+  .modal__body{
+    padding: 24px 32px;
+  }
+}
+
+
 /*
 
 ================================================
@@ -57,6 +67,9 @@
 }
 .w-960{
   width: 960px;
+}
+.w-1200{
+  width: 1200px;
 }
 
 .mdm-group-design__grid{
@@ -418,6 +431,152 @@
   background: url('/assets/images/common/ico-delete-sm.svg') no-repeat center;
   display: inline-block;
   vertical-align: middle;
+}
+
+.al-deploy-detail {
+  .pagination,
+  .al-pagination {
+    margin-top: 16px;
+  }
+
+  .mdm-remote__actions .form__field {
+    width: 180px;
+  }
+
+  .al-table {
+    th,
+    td {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+  }
+
+  &__info-item--wide {
+    grid-column: 1 / -1;
+
+    .value {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+  }
+
+  &__count {
+    margin-left: 10px;
+    color: #1E293B;
+    font-size: 17px;
+    font-weight: 700;
+
+    strong {
+      font-size: 19px;
+    }
+  }
+
+  &__count--success strong {
+    color: #24933f;
+  }
+
+  &__count--danger strong {
+    color: #de3412;
+  }
+
+  &__count--warn strong {
+    color: #c78500;
+  }
+}
+
+.al-deploy-register {
+  .step {
+    margin-bottom: 8px;
+  }
+
+  .form__radio-field {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 40px;
+  }
+
+  .al-radio,
+  .al-checkbox {
+    font-size: 17px;
+  }
+
+  &__target {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+}
+
+.al-transfer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 16px;
+
+  &__panel {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #94A3B8;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  &__header {
+    min-height: 72px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #BADAFF;
+    background: #F0F7FF;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 400;
+    color: #1E293B;
+
+    strong {
+      color: #1C8CF4;
+    }
+  }
+
+  &__list {
+    min-height: 160px;
+    margin: 0;
+    padding: 16px;
+    overflow-y: auto;
+    list-style: none;
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    max-height: 300px;
+    
+  }
+
+  &__item {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .btn {
+      min-width: 40px;
+      width: 40px;
+      padding: 0;
+      font-size: 19px;
+    }
+  }
 }
 
 .mdm-remote-log{
