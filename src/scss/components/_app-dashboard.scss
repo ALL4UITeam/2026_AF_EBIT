@@ -494,6 +494,7 @@
     }
 
     &__legend-chip {
+        border: 0;
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
         height: 32px;
         border-radius: 100px;
@@ -502,10 +503,79 @@
         gap: 2px;
         background: rgba(255, 255, 255, 1);
         font-size: 13px;
+        font-family: inherit;
+        color: #0f172a;
+        cursor: pointer;
         display: inline-flex;
         align-items: center;
+        transition: background-color 0.2s ease, color 0.2s ease;
 
-        
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &[aria-pressed="true"] {
+            color: #fff;
+        }
+
+        &--ok::before {
+            background-image: url('/assets/images/common/icon-map-ok.svg');
+        }
+
+        &--ok[aria-pressed="true"] {
+            background: #228738;
+
+            &::before {
+                background-image: url('/assets/images/common/icon-map-ok-on.svg');
+            }
+        }
+
+        &--warn::before {
+            background-image: url('/assets/images/common/icon-map-warn.svg');
+        }
+
+        &--warn[aria-pressed="true"] {
+            background: #c78500;
+
+            &::before {
+                background-image: url('/assets/images/common/icon-map-warn-on.svg');
+            }
+        }
+
+        &--danger::before {
+            background-image: url('/assets/images/common/icon-map-danger.svg');
+        }
+
+        &--danger[aria-pressed="true"] {
+            background: #bd2c0f;
+
+            &::before {
+                background-image: url('/assets/images/common/icon-map-danger-on.svg');
+            }
+        }
+
+        &--offline::before {
+            background-image: url('/assets/images/common/icon-map-offline.svg');
+        }
+
+        &--offline[aria-pressed="true"] {
+            background: #475569;
+
+            &::before {
+                background-image: url('/assets/images/common/icon-map-offline-on.svg');
+            }
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--al-color-primary);
+            outline-offset: 2px;
+        }
     }
 
 
@@ -638,10 +708,6 @@
         place-content: center;
         justify-items: center;
         gap: 4px;
-    }
-
-    &__ico {
-        
     }
 
     &__k {

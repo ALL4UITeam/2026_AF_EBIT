@@ -733,6 +733,7 @@ function initGuidePage() {
   initDatePop(root);
   initBrightnessControls(root);
   initIssueFilterTabs(root);
+  initMapLegendToggles(root);
   const searchBtn = root.querySelector("[data-al-guide-search]");
   const kw = root.querySelector("[data-al-guide-kw]");
   const runSearch = () => applyFilter();
@@ -835,6 +836,18 @@ function initIssueFilterTabs(root) {
       const isVisible = filter === "all" || row.dataset.issueType === filter;
       row.hidden = !isVisible;
     });
+  });
+}
+function initMapLegendToggles(root) {
+  root.addEventListener("click", (event) => {
+    const target = (
+      /** @type {HTMLElement} */
+      event.target
+    );
+    const button = target.closest("[data-map-legend-toggle]");
+    if (!(button instanceof HTMLButtonElement) || !root.contains(button)) return;
+    const isPressed = button.getAttribute("aria-pressed") === "true";
+    button.setAttribute("aria-pressed", String(!isPressed));
   });
 }
 function initBrightnessControls(root) {

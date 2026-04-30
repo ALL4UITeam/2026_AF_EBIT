@@ -64,19 +64,18 @@
             border-bottom: 1px solid #d8dfe8;
             border-radius: 0;
             background: transparent;
+            margin-bottom: 20px;
         }
 
         .tabs__tab,
         .al-tabs__tab {
-            position: relative;
-            min-height: 38px;
-            border-radius: 0;
-            padding: 0 14px;
-            background: transparent;
-            font-size: 21px;
-            font-weight: 800;
-            color: #8a97a8;
-
+            font-size: 19px;
+            font-weight: 700;
+            color: #94A3B8;
+            padding: 0 0 12px;
+            margin-right: 52px;
+            min-width: auto;
+            text-align: left;
             &:hover:not(.tabs__tab--active):not(.al-tabs__tab--active):not(.is-active) {
                 background: transparent;
                 color: #52657a;

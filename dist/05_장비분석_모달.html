@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>장비 분석 | E-BIT 관리자</title>
+  
+  <link rel="stylesheet" href="./assets/fonts/pretendard.css">
+  <link rel="stylesheet" href="./lib/simplebar/simplebar.css">
+  <link rel="stylesheet" href="./lib/dragula/dragula.min.css">
+  <link rel="stylesheet" href="./lib/jQuery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="./lib/jQuery-ui/jquery-ui.theme.min.css">
+  <link rel="stylesheet" href="./lib/datetimepicker/jquery.datetimepicker.css">
+  
+  
+  <script src="./lib/jQuery/jquery-3.7.1.js"></script>
+  <script src="./lib/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+  <script src="./lib/jQuery-ui/jquery-ui.min.js"></script>
+  <script src="./lib/simplebar/simplebar.min.js"></script>
+  <script src="./lib/dragula/dragula.min.js"></script>
+  <script type="module" src="/2026_AF_EBIT/assets/index.js"></script>
+  <link rel="stylesheet" href="/2026_AF_EBIT/assets/style.css">
+</head>
+
+<body class="al-admin">
+  <div class="al-wrap">
+
+    <header class="al-header">
+        <div class="al-header__left">
+            <button type="button" class="al-header__menu-btn" id="alMenuBtn" aria-label="메뉴 열기">
+                <span class="al-header__hamburger" aria-hidden="true"><span></span></span>
+            </button>
+            <a href="#" class="al-header__brand">
+                <img src="/2026_AF_EBIT/assets/images/logo.svg" alt="" />
+            </a>
+        </div>
+    
+        <div class="al-header__right">
+            <button type="button" class="al-header__notify" aria-label="알림">
+                <span class="al-header__notify-icon" aria-hidden="true"></span>
+            </button>
+            <div class="al-header__user">
+                <div class="al-header__user-name"><strong>관리자</strong>님</div>
+                <div class="al-header__avatar" aria-hidden="true">
+                    <span class="al-header__avatar-icon"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="al-body">
+      <div class="al-backdrop" id="alBackdrop" aria-hidden="true"></div>
+
+      <aside class="al-sidenav" id="alSidenav" aria-label="주 메뉴">
+          <div class="al-sidenav__scroll">
+              <ul class="al-sidenav__list">
+      
+                  <!-- 대시보드 (단일 메뉴) -->
+                  <li class="al-sidenav__item">
+                      <a href="#" class="al-sidenav__link">
+                          <span class="al-sidenav__icon al-sidenav__icon--m01" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">대시보드</span>
+                      </a>
+                  </li>
+      
+                  <!-- 앱 관리 (2depth, 현재 활성) -->
+                  <li class="al-sidenav__item is-open" data-nav="app">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m02" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">앱관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink is-active">앱 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">배포 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 단말 관리 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m03" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">단말관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">운영 대시보드</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">단말 등록</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">단말 등록</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">그룹 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">단말 상태 현황</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">원격 제어</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 컨텐츠 관리 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m04" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">컨텐츠관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">텍스트 설정</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">텍스트 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 장비분석 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m05" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">장비분석</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">분석 현황</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">교체주기 분석</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">기기 유형 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">배터리 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+      
+                  <!-- 운영관리 -->
+                  <li class="al-sidenav__item">
+                      <a href="#" class="al-sidenav__link">
+                          <span class="al-sidenav__icon al-sidenav__icon--m06" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">운영관리</span>
+                      </a>
+                  </li>
+      
+                  <!-- 시스템관리 -->
+                  <li class="al-sidenav__item">
+                      <button type="button" class="al-sidenav__trigger" aria-expanded="true">
+                          <span class="al-sidenav__icon al-sidenav__icon--m07" aria-hidden="true"></span>
+                          <span class="al-sidenav__label">시스템관리</span>
+                          <span class="al-sidenav__arrow" aria-hidden="true"></span>
+                      </button>
+                      <ul class="al-sidenav__sub">
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">사용자 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">그룹 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">권한 관리</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">작업 이력</a>
+                          </li>
+                          <li class="al-sidenav__subitem">
+                              <a href="#" class="al-sidenav__sublink">공통 코드 관리</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </aside>
+      <main class="al-content" id="alContent">
+        <section class="card">
+          <h3 class="card__title">콘텐츠 관리 Modal</h3>
+          <div class="al-guide-row">
+            <button type="button" class="btn btn--primary btn--md" data-al-modal-open="">기기유형 상세</button>
+            <button type="button" class="btn btn--primary btn--md" data-al-modal-open="">기기유형 수정</button>
+            <button type="button" class="btn btn--primary btn--md" data-al-modal-open="">기기유형 등록</button>
+            <button type="button" class="btn btn--primary btn--md" data-al-modal-open="">기기유형 등록</button>
+            <button type="button" class="btn btn--primary btn--md" data-al-modal-open="">배터리 상세</button>
+            <button type="button" class="btn btn--secondary btn--md" data-al-modal-open="al-modal-warning-1">경고(오류)</button>
+            <button type="button" class="btn btn--secondary btn--md" data-al-modal-open="al-modal-warning-2">경고(OTP초기화)</button>
+            <button type="button" class="btn btn--secondary btn--md" data-al-modal-open="al-modal-confirm">확인</button>
+            <button type="button" class="btn btn--secondary btn--md" data-al-modal-open="al-modal-modify">수정</button>
+            <button type="button" class="btn btn--secondary btn--md" data-al-modal-open="al-modal-regist">등록</button>
+          </div>
+        </section>
+
+        
+        <div class="al-modal-backdrop" id="al-modal-warning-1" data-al-modal-backdrop data-open="false"
+            aria-hidden="true">
+            <div class="al-modal" role="dialog" aria-modal="true" aria-labelledby="al-modal-warning-1-title" tabindex="-1">
+                <div class="al-modal__header">
+                    <h2 class="al-modal__title" id="al-modal-warning-1-title">경고</h2>
+                    <button type="button" class="al-modal__close" data-al-modal-close="al-modal-warning-1"
+                        aria-label="닫기">닫기</button>
+                </div>
+                <div class="al-modal__body">
+                    <div class="al-modal__icon al-modal__icon--warning" aria-hidden="true"></div>
+                    <p class="al-modal__message">오류 메시지</p>
+                    <p class="al-modal__submessage">해당 텍스트에 <strong>금칙어</strong>가 포함되어 있어<br />등록이 <strong>불가능</strong>
+                        합니다.</p>
+                </div>
+                <div class="al-modal__footer">
+                    <button type="button" class="btn btn--white btn--pill btn--md" data-al-modal-close="al-modal-warning-1">
+                        취소
+                    </button>
+                    <button type="button" class="btn btn--primary btn--pill btn--md" data-al-modal-close="al-modal-warning-1">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="al-modal-backdrop" id="al-modal-warning-2" data-al-modal-backdrop data-open="false"
+            aria-hidden="true">
+            <div class="al-modal" role="dialog" aria-modal="true" aria-labelledby="al-modal-warning-2-title" tabindex="-1">
+                <div class="al-modal__header">
+                    <h2 class="al-modal__title" id="al-modal-warning-2-title">경고</h2>
+                    <button type="button" class="al-modal__close" data-al-modal-close="al-modal-warning-2"
+                        aria-label="닫기">닫기</button>
+                </div>
+                <div class="al-modal__body">
+                    <div class="al-modal__icon al-modal__icon--warning" aria-hidden="true"></div>
+                    <p class="al-modal__message">OTP초기화</p>
+                    <p class="al-modal__submessage">사용자의 OTP를 초기화합니다. 정말로 진행하시겠습니까?</p>
+                </div>
+                <div class="al-modal__footer">
+                    <button type="button" class="btn btn--white btn--pill btn--md" data-al-modal-close="al-modal-warning-2">
+                        취소
+                    </button>
+                    <button type="button" class="btn btn--primary btn--pill btn--md" data-al-modal-close="al-modal-warning-2">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="al-modal-backdrop" id="al-modal-confirm" data-al-modal-backdrop data-open="false" aria-hidden="true">
+            <div class="al-modal" role="dialog" aria-modal="true" aria-labelledby="al-modal-confirm-title" tabindex="-1">
+                <div class="al-modal__header">
+                    <h2 class="al-modal__title" id="al-modal-confirm-title">확인</h2>
+                    <button type="button" class="al-modal__close" data-al-modal-close="al-modal-confirm"
+                        aria-label="닫기">닫기</button>
+                </div>
+                <div class="al-modal__body">
+                    <p class="al-modal__message">단말을 등록하겠습니까?</p>
+                </div>
+                <div class="al-modal__footer">
+                    <button type="button" class="btn btn--white btn--pill btn--md" data-al-modal-close="al-modal-confirm">
+                        취소
+                    </button>
+                    <button type="button" class="btn btn--primary btn--pill btn--md" data-al-modal-close="al-modal-confirm">
+                        확인
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="al-modal-backdrop" id="al-modal-modify" data-al-modal-backdrop data-open="false" aria-hidden="true">
+            <div class="al-modal" role="dialog" aria-modal="true" aria-labelledby="al-modal-modify-title" tabindex="-1">
+                <div class="al-modal__header">
+                    <h2 class="al-modal__title" id="al-modal-modify-title">수정</h2>
+                    <button type="button" class="al-modal__close" data-al-modal-close="al-modal-modify"
+                        aria-label="닫기">닫기</button>
+                </div>
+                <div class="al-modal__body">
+                    <div class="al-modal__icon al-modal__icon--modify" aria-hidden="true"></div>
+                    <p class="al-modal__message">수정하시겠습니까?</p>
+                    <p class="al-modal__submessage">변경하신 내용으로 저장됩니다.</p>
+                </div>
+                <div class="al-modal__footer">
+                    <button type="button" class="btn btn--white btn--pill btn--md" data-al-modal-close="al-modal-modify">
+                        취소
+                    </button>
+                    <button type="button" class="btn btn--primary btn--pill btn--md" data-al-modal-close="al-modal-modify">
+                        수정
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="al-modal-backdrop" id="al-modal-regist" data-al-modal-backdrop data-open="false" aria-hidden="true">
+            <div class="al-modal" role="dialog" aria-modal="true" aria-labelledby="al-modal-regist-title" tabindex="-1">
+                <div class="al-modal__header">
+                    <h2 class="al-modal__title" id="al-modal-regist-title">등록</h2>
+                    <button type="button" class="al-modal__close" data-al-modal-close="al-modal-regist"
+                        aria-label="닫기">닫기</button>
+                </div>
+                <div class="al-modal__body">
+                    <div class="al-modal__icon al-modal__icon--regist" aria-hidden="true"></div>
+                    <p class="al-modal__message">등록하시겠습니까?</p>
+                    <p class="al-modal__submessage">입력하신 내용으로 새로 등록됩니다.</p>
+                </div>
+                <div class="al-modal__footer">
+                    <button type="button" class="btn btn--white btn--pill btn--md" data-al-modal-close="al-modal-regist">
+                        취소
+                    </button>
+                    <button type="button" class="btn btn--primary btn--pill btn--md" data-al-modal-close="al-modal-regist">
+                        등록
+                    </button>
+                </div>
+            </div>
+        </div>
+
+      </main>
+      <!-- // al-content -->
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
