@@ -103,6 +103,8 @@ function initGuidePage() {
     initTabs(root);
     initToggle(root);
     initDatePop(root);
+    initBrightnessControls(root);
+    initIssueFilterTabs(root);
 
     const searchBtn = root.querySelector('[data-al-guide-search]');
     const kw = root.querySelector('[data-al-guide-kw]');
@@ -195,6 +197,114 @@ function initDatePop(root) {
         field.dataset.dateStart = '2026-03-31';
         field.dataset.dateEnd = '2026-04-07';
         paintSelectedDays(field);
+    });
+}
+
+function initIssueFilterTabs(root) {
+    root.addEventListener('click', (event) => {
+        const target = /** @type {HTMLElement} */ (event.target);
+        const tab = target.closest('[data-issue-filter]');
+        if (!(tab instanceof HTMLElement) || !root.contains(tab)) return;
+
+        const card = tab.closest('.al-app-dashboard__card');
+        if (!card) return;
+
+        const filter = tab.dataset.issueFilter;
+        card.querySelectorAll('[data-issue-type]').forEach((row) => {
+            if (!(row instanceof HTMLElement)) return;
+
+            const isVisible = filter === 'all' || row.dataset.issueType === filter;
+            row.hidden = !isVisible;
+        });
+    });
+}
+
+function initBrightnessControls(root) {
+    const clampBrightness = (value) => Math.min(100, Math.max(0, value));
+
+    root.querySelectorAll('.adx-br').forEach((control) => {
+        const bar = control.querySelector('.adx-br__bar');
+        const fill = control.querySelector('.adx-br__fill');
+        const thumb = control.querySelector('.adx-br__thumb');
+        const valueText = control.querySelector('.adx-br__val');
+
+        if (!(bar instanceof HTMLElement) || !(fill instanceof HTMLElement) || !(thumb instanceof HTMLElement)) return;
+
+        let currentValue = clampBrightness(Number(bar.getAttribute('aria-valuenow')) || 0);
+        let isDragging = false;
+
+        const render = (value) => {
+            currentValue = clampBrightness(value);
+            const displayValue = Math.round(currentValue);
+
+            bar.setAttribute('aria-valuenow', String(displayValue));
+            bar.setAttribute('aria-valuetext', `${displayValue}%`);
+            fill.style.width = `${currentValue}%`;
+            thumb.style.left = `calc(${currentValue}% - 9px)`;
+
+            if (valueText) {
+                valueText.innerHTML = `${displayValue}<span>%</span>`;
+            }
+        };
+
+        const updateFromPointer = (event) => {
+            const rect = bar.getBoundingClientRect();
+            if (!rect.width) return;
+
+            const nextValue = ((event.clientX - rect.left) / rect.width) * 100;
+            render(nextValue);
+        };
+
+        bar.tabIndex = bar.tabIndex < 0 ? 0 : bar.tabIndex;
+        render(currentValue);
+
+        bar.addEventListener('pointerdown', (event) => {
+            isDragging = true;
+            bar.setPointerCapture?.(event.pointerId);
+            updateFromPointer(event);
+        });
+
+        bar.addEventListener('pointermove', (event) => {
+            if (!isDragging) return;
+            updateFromPointer(event);
+        });
+
+        bar.addEventListener('pointerup', () => {
+            isDragging = false;
+        });
+
+        bar.addEventListener('pointercancel', () => {
+            isDragging = false;
+        });
+
+        bar.addEventListener('keydown', (event) => {
+            const keySteps = {
+                ArrowLeft: -5,
+                ArrowDown: -5,
+                ArrowRight: 5,
+                ArrowUp: 5,
+                PageDown: -10,
+                PageUp: 10,
+            };
+
+            if (event.key === 'Home') {
+                event.preventDefault();
+                render(0);
+                return;
+            }
+
+            if (event.key === 'End') {
+                event.preventDefault();
+                render(100);
+                return;
+            }
+
+            const step = keySteps[event.key];
+            if (typeof step !== 'number') return;
+
+            event.preventDefault();
+            render(currentValue + step);
+        });
     });
 }
 

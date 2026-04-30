@@ -92,7 +92,7 @@ button, a {
   background: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: rgba(4, 123, 182, 0.2);
   border-radius: 3px;
 }
 *::-webkit-scrollbar-thumb:hover {
@@ -101,7 +101,7 @@ button, a {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
+  scrollbar-color: rgba(4, 123, 182, 0.2) transparent;
 }
 
 /* 7) 애니메이션/스무스 스크롤 접근성 */
@@ -2155,6 +2155,14 @@ input[type=file]:focus + .file-upload-label, .file-upload-label:has(input[type=f
   box-shadow: 0 0 0 3px rgba(18, 118, 167, 0.1);
 }
 
+.form__radio-field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 40px;
+  height: 40px;
+}
+
 .file-upload-content {
   display: flex;
   flex-direction: column;
@@ -4014,10 +4022,12 @@ select:focus {
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
 }
 .adx-br__val {
+  min-width: 44px;
   font-size: 19px;
   color: #1C8CF4;
   line-height: 1;
   font-weight: 900;
+  text-align: right;
 }
 .adx-br__val span {
   font-size: 13px;
@@ -6432,12 +6442,6 @@ select:focus {
 .al-deploy-register .step {
   margin-bottom: 8px;
 }
-.al-deploy-register .form__radio-field {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  min-height: 40px;
-}
 .al-deploy-register .al-radio,
 .al-deploy-register .al-checkbox {
   font-size: 17px;
@@ -6753,7 +6757,6 @@ select:focus {
 }
 .mdm-status-modal__tabs .tabs__tab {
   height: 44px;
-  padding: 0 52px 0 0;
   font-size: 21px;
   font-weight: 600;
   color: #94a3b8;

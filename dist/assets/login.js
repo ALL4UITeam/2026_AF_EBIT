@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const pwInput = document.getElementById("password");
-  const togglePwBtn = document.querySelector(".login-card__toggle-pw");
   const form = document.querySelector(".login-card__form");
   const userIdInput = document.getElementById("userId");
   const rememberCheckbox = form == null ? void 0 : form.querySelector('input[name="rememberId"]');
   const STORAGE_KEY_ID = "login_saved_id";
-  if (togglePwBtn && pwInput) {
+  document.querySelectorAll(".login-card__toggle-pw").forEach((togglePwBtn) => {
+    const control = togglePwBtn.closest(".login-card__control--password");
+    const pwInput = control == null ? void 0 : control.querySelector(".login-card__input");
+    if (!(togglePwBtn instanceof HTMLButtonElement) || !(pwInput instanceof HTMLInputElement)) return;
     togglePwBtn.addEventListener("click", () => {
       const isPassword = pwInput.type === "password";
       pwInput.type = isPassword ? "text" : "password";
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       togglePwBtn.setAttribute("aria-pressed", String(isPassword));
       togglePwBtn.setAttribute("title", isPassword ? "비밀번호 숨기기" : "비밀번호 표시");
     });
-  }
+  });
   if (userIdInput && rememberCheckbox) {
     try {
       const savedId = localStorage.getItem(STORAGE_KEY_ID);

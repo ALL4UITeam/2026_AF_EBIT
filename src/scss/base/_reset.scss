@@ -98,7 +98,7 @@ button,a{
     }
     
     &::-webkit-scrollbar-thumb {
-        background: #ccc;
+        background: rgba(4, 123, 182, 0.20);
         border-radius: 3px;
         
         &:hover {
@@ -110,7 +110,7 @@ button,a{
 // Firefox용
 * {
     scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
+    scrollbar-color: rgba(4, 123, 182, 0.20) transparent;
 }
 
 /* 7) 애니메이션/스무스 스크롤 접근성 */

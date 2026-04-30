@@ -487,14 +487,7 @@
 .al-deploy-register {
   .step {
     margin-bottom: 8px;
-  }
-
-  .form__radio-field {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    min-height: 40px;
-  }
+  } 
 
   .al-radio,
   .al-checkbox {
@@ -858,7 +851,6 @@
 
     .tabs__tab {
       height: 44px;
-      padding: 0 52px 0 0;
       font-size: 21px;
       font-weight: 600;
       color: #94a3b8;

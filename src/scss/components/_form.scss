@@ -925,6 +925,14 @@
     }
 }
 
+.form__radio-field {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 40px;
+    height: 40px;
+}
+
 .file-upload-content {
     display: flex;
     flex-direction: column;

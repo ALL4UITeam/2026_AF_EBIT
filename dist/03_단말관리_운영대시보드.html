@@ -296,10 +296,19 @@
                                 <header class="al-app-dashboard__card-head al-app-dashboard__card-head--issue">
                                     <h2 class="al-app-dashboard__card-title">최근 이슈 · 유지보수 <a href="#"
                                             class="al-app-dashboard__more" aria-label="최근 이슈 유지보수 더보기">➜</a></h2>
-                                    <div class="al-app-dashboard__tabs" aria-label="이슈 필터">
-                                        <button type="button" class="al-app-dashboard__tab is-active">전체</button>
-                                        <button type="button" class="al-app-dashboard__tab">장애</button>
-                                        <button type="button" class="al-app-dashboard__tab">유지보수</button>
+                                    <div class="tabs" data-al-tabs data-issue-tabs>
+                                        <div class="tabs__list" role="tablist" aria-label="이슈 필터">
+                                            <button type="button" class="tabs__tab tabs__tab--active" role="tab"
+                                                id="issue-tab-all" data-al-tab="issue-all" data-issue-filter="all"
+                                                aria-selected="true">전체</button>
+                                            <button type="button" class="tabs__tab" role="tab" id="issue-tab-error"
+                                                data-al-tab="issue-error" data-issue-filter="장애"
+                                                aria-selected="false" tabindex="-1">장애</button>
+                                            <button type="button" class="tabs__tab" role="tab"
+                                                id="issue-tab-maintenance" data-al-tab="issue-maintenance"
+                                                data-issue-filter="유지보수" aria-selected="false"
+                                                tabindex="-1">유지보수</button>
+                                        </div>
                                     </div>
                                 </header>
 
@@ -313,7 +322,7 @@
                                         </div>
                                     </div>
                                     <div class="table-body">
-                                        <div class="table-cell__row">
+                                        <div class="table-cell__row" data-issue-type="유지보수">
                                             <div class="table-cell">유지보수</div>
                                             <div class="table-cell"><span class="al-badge al-badge--success">통신</span>
                                             </div>
@@ -322,7 +331,7 @@
                                                     class="al-app-dashboard__time al-app-dashboard__time--now">방금
                                                     전</span></div>
                                         </div>
-                                        <div class="table-cell__row">
+                                        <div class="table-cell__row" data-issue-type="유지보수">
                                             <div class="table-cell">유지보수</div>
                                             <div class="table-cell"><span class="al-badge al-badge--warn">배터리</span>
                                             </div>
@@ -331,7 +340,7 @@
                                                     class="al-app-dashboard__time al-app-dashboard__time--now">방금전</span>
                                             </div>
                                         </div>
-                                        <div class="table-cell__row">
+                                        <div class="table-cell__row" data-issue-type="유지보수">
                                             <div class="table-cell">유지보수</div>
                                             <div class="table-cell"><span class="al-badge al-badge--info">태양광패널</span>
                                             </div>
@@ -339,7 +348,7 @@
                                             <div class="table-cell"><span class="al-app-dashboard__time">30분 전</span>
                                             </div>
                                         </div>
-                                        <div class="table-cell__row">
+                                        <div class="table-cell__row" data-issue-type="장애">
                                             <div class="table-cell">장애</div>
                                             <div class="table-cell"><span class="al-badge al-badge--danger">미조치</span>
                                             </div>
@@ -389,7 +398,7 @@
                                 </div>
                             </article>
                             <!-- 단말기정보 확장 -->
-                            <section class="adx-pop" aria-label="단말기 정보 상세" style="">
+                            <section class="adx-pop" aria-label="단말기 정보 상세">
                                 <header class="adx-pop__hd">
                                     <h3 class="adx-pop__tt">갈전 정류장 단말</h3>
                                     <button type="button" class="adx-pop__x" aria-label="상세 닫기"></button>
